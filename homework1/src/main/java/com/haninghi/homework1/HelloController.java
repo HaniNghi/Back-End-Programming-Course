@@ -1,6 +1,8 @@
 package com.haninghi.homework1;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 public class HelloController {
@@ -17,4 +19,9 @@ public class HelloController {
     public String contact() {
         return "This is the contact page";
     }
+    @GetMapping("/hello")
+    public String hello(@RequestParam String location, String name) {
+        return "Welcom to the " + location + " " + name + "!" ;
+    }
+
 }
